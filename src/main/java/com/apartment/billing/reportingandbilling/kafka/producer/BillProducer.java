@@ -11,6 +11,6 @@ public class BillProducer {
     private KafkaTemplate<String,String> kafkaTemplate;
 
     public void sendNotification(String message) {
-        kafkaTemplate.send("bill",message);
+        kafkaTemplate.send("billTopic",message);
     }
 }
