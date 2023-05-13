@@ -9,9 +9,9 @@ import lombok.*;
 @Builder
 public class UpsertBillingDetailsResponse {
 
-    public String successMessage;
+    private String successMessage;
 
-    public String faliureMessage;
+    private String faliureMessage;
 
-    public String flatNumber;
+    private String flatNumber;
 }

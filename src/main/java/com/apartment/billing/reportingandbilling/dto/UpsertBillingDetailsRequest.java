@@ -11,14 +11,16 @@ import lombok.Setter;
 @Setter
 public class UpsertBillingDetailsRequest {
 
-    public String flatNumber;
+    private String flatNumber;
 
-    public Long rent;
+    private Long rent;
 
-    public Long cookAmount;
+    private Long cookAmount;
 
-    public Long maidAmount;
+    private Long maidAmount;
 
-    public Long maintenance;
+    private Long maintenance;
+
+    private Long id;
 
 }
