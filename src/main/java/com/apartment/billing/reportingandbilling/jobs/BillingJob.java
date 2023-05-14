@@ -20,8 +20,8 @@ public class BillingJob {
     @Autowired
     BillingBusinessLogic billingBusinessLogic;
     
-    //@Scheduled(cron = "0 0 23 28-31 * ?")
-    @Scheduled(fixedDelay = 120000) // 120000 milliseconds = 2 minutes
+    @Scheduled(cron = "0 0 23 28-31 * ?")
+    //@Scheduled(fixedDelay = 120000) // 120000 milliseconds = 2 minutes
     public void billingJob() {
         List<FlatBillingDetails> allBillingDetails = billingDetailsRepository.findAll();
         billingBusinessLogic.sendBillsToOwnersOrTenants(allBillingDetails);
