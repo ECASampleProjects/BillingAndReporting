@@ -35,14 +35,18 @@ public class Billing {
     private LocalDateTime billCreatedTime;
 
     @Column(name="rent_status")
+    @Enumerated(EnumType.STRING)
     private BillStatus rentStatus;
 
     @Column(name="maintenance_status")
+    @Enumerated(EnumType.STRING)
     private BillStatus maintenance_status;
 
     @Column(name="cook_status")
+    @Enumerated(EnumType.STRING)
     private BillStatus cookStatus;
 
     @Column(name="maid_status")
+    @Enumerated(EnumType.STRING)
     private BillStatus maidStatus;
 }

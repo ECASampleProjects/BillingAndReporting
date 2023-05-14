@@ -13,7 +13,6 @@ import com.apartment.billing.reportingandbilling.repository.BillingRepository;
 import com.apartment.billing.reportingandbilling.repository.FlatBillingDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
@@ -69,15 +68,15 @@ public class BillingBusinessLogic {
                 .flatNumber(billing.getBillingDetails().getFlatNumber())
                 .month(billing.getMonth())
                 .billCreatedTime(billing.getBillCreatedTime())
-                .maidStatus(Optional.of(billing.getMaidStatus().toString()))
-                .cookStatus(Optional.of(billing.getCookStatus().toString()))
+                .maidStatus(billing.getMaidStatus() != null ? billing.getMaidStatus().toString() : null)
+                .cookStatus(billing.getCookStatus() != null ? billing.getCookStatus().toString() : null)
                 .rentStatus(billing.getRentStatus().toString())
                 .maintenanceStatus(billing.getMaintenance_status().toString())
                 .maintenance(billing.getBillingDetails().getMaintenanceAmount())
                 .rent(billing.getBillingDetails().getRentAmount())
-                .cook(Optional.of(billing.getBillingDetails().getCookAmount()))
-                .maid(Optional.of(billing.getBillingDetails().getMaidAmount()))
-                .billPaidTime(Optional.of(billing.getBillPaidTime()))
+                .cook(billing.getBillingDetails().getCookAmount() != null ? billing.getBillingDetails().getCookAmount() : null)
+                .maid(billing.getBillingDetails().getMaidAmount() != null ? billing.getBillingDetails().getMaidAmount() : null)
+                .billPaidTime(billing.getBillPaidTime() != null ? billing.getBillPaidTime() : null)
                 .build();
 
     }

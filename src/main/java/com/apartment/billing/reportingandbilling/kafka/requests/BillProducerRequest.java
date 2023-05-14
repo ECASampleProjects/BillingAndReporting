@@ -18,7 +18,7 @@ public class BillProducerRequest {
 
     private String month;
 
-    private Optional<LocalDateTime> billPaidTime;
+    private LocalDateTime billPaidTime;
 
     private LocalDateTime billCreatedTime;
 
@@ -26,16 +26,16 @@ public class BillProducerRequest {
 
     private String maintenanceStatus;
 
-    private Optional<String> cookStatus;
+    private String cookStatus;
 
-    private Optional<String> maidStatus;
+    private String maidStatus;
 
     private Long maintenance;
 
     private Long rent;
 
-    private Optional<Long> maid;
+    private Long maid;
 
-    private Optional<Long> cook;
+    private Long cook;
 
 }
